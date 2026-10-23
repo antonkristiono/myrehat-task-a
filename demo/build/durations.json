@@ -1,0 +1,56 @@
+[
+  {
+    "id": "intro",
+    "caption": "Tropic Hiking Trails — demo perbaikan Task A",
+    "file": "demo/build/audio/00.mp3",
+    "duration": 14.76
+  },
+  {
+    "id": "search",
+    "caption": "A1 · Pencarian listing",
+    "file": "demo/build/audio/01.mp3",
+    "duration": 17.98
+  },
+  {
+    "id": "category",
+    "caption": "A2 · Kategori digabung dengan pencarian",
+    "file": "demo/build/audio/02.mp3",
+    "duration": 16.1
+  },
+  {
+    "id": "header",
+    "caption": "A10 · Pencarian di header",
+    "file": "demo/build/audio/03.mp3",
+    "duration": 8.02
+  },
+  {
+    "id": "fields",
+    "caption": "A6 + A9 · Digital Nomad & Host Terms",
+    "file": "demo/build/audio/04.mp3",
+    "duration": 7.54
+  },
+  {
+    "id": "pricing",
+    "caption": "A11 · Daily / Monthly dengan total otomatis",
+    "file": "demo/build/audio/05.mp3",
+    "duration": 14.18
+  },
+  {
+    "id": "confirm",
+    "caption": "A12 · Konfirmasi otomatis setelah booking",
+    "file": "demo/build/audio/06.mp3",
+    "duration": 19.3
+  },
+  {
+    "id": "mobile",
+    "caption": "A7 · Mobile 390px",
+    "file": "demo/build/audio/07.mp3",
+    "duration": 17.04
+  },
+  {
+    "id": "outro",
+    "caption": "Dua perbaikan tersulit",
+    "file": "demo/build/audio/08.mp3",
+    "duration": 15.74
+  }
+]

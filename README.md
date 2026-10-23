@@ -41,11 +41,15 @@ wp-content/themes/myrehat-test/    # child theme hasil perbaikan
 elementor/
   tropic-hiking-trails-hero.json   # export JSON hero (Elementor section)
 demo/
-  video/tropic-hiking-trails-demo.mp4
+  video/tropic-hiking-trails-demo.mp4   # 2:27, voice-over Bahasa Indonesia
   shots/                           # screenshot bukti (desktop + 390px)
   test.cjs                         # 21 assertion otomatis (Playwright)
-  record.cjs                       # perekam video demo
-  narration.md                     # script narasi video (≤5 menit)
+  narration.json                   # teks voice-over per segmen
+  build/
+    tts.sh                         # edge-tts -> mp3 + durations.json
+    record.cjs                     # rekam layar, pacing ikut durasi audio
+    cards.cjs                      # kartu intro/outro
+    make-video.cjs                 # caption + audio + mux -> mp4
 PROMPT-LOG.md
 VERIFICATION.md
 ```
@@ -86,17 +90,47 @@ pilih elementor/tropic-hiking-trails-hero.json
 ```bash
 # 21 assertion UI (desktop 1280px + mobile 390px)
 NODE_PATH=<path ke node_modules playwright> node demo/test.cjs
-
-# rekam ulang video demo
-NODE_PATH=<path ke node_modules playwright> node demo/record.cjs
-ffmpeg -i demo/raw/*.webm -c:v libx264 -pix_fmt yuv420p -crf 24 demo/video/tropic-hiking-trails-demo.mp4
 ```
 
 Hasil terakhir: **21 passed, 0 failed**.
 
 ---
 
-## 5. Catatan
+## 5. Video demo
+
+`demo/video/tropic-hiking-trails-demo.mp4` — 2 menit 27 detik, 1280×800, H.264 + AAC,
+**voice-over Bahasa Indonesia** dan caption per langkah.
+
+| Bagian | Isi |
+|--------|-----|
+| 0:00–0:03 | Kartu intro |
+| 0:03–0:21 | Overview halaman + A1 pencarian listing |
+| 0:21–0:39 | A2 kategori digabung dengan pencarian |
+| 0:39–0:56 | A10 pencarian di header |
+| 0:56–1:04 | A6 + A9 Digital Nomad & Host Terms |
+| 1:04–1:12 | A11 Daily / Monthly, total RM 350 ↔ RM 8.400 |
+| 1:12–1:27 | A12 submit → konfirmasi otomatis |
+| 1:27–1:47 | A7 mobile 390px (di-pillarbox agar terbaca) |
+| 1:47–2:22 | Penjelasan 2 perbaikan tersulit |
+| 2:22–2:27 | Kartu penutup + link repo |
+
+Voice-over dibuat dengan `edge-tts` (`id-ID-ArdiNeural`) dari `demo/narration.json`.
+Kalau mau pakai suara sendiri, ganti segmen di `demo/narration.json` lalu jalankan
+tiga langkah ini — durasi video otomatis ikut panjang audio:
+
+```bash
+EDGE_TTS=<path edge-tts> ./demo/build/tts.sh      # 1. audio + durations.json
+node demo/build/cards.cjs                          # 2. kartu intro/outro
+node demo/build/record.cjs                         # 3. rekam (pacing = durasi audio)
+node demo/build/make-video.cjs                     # 4. caption + mux -> mp4
+```
+
+Untuk mengganti dengan rekaman suara sendiri: taruh mp3 per segmen di
+`demo/build/audio/` (nama `00.mp3` … `08.mp3`), lalu jalankan langkah 2–4.
+
+---
+
+## 6. Catatan
 
 - Tidak ada plugin cache aktif; kalau browser menampilkan versi lama, hard-refresh.
 - Nomor WhatsApp/LINE dan URL sosial memakai placeholder — ganti di

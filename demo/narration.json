@@ -1,0 +1,47 @@
+[
+  {
+    "id": "intro",
+    "caption": "Tropic Hiking Trails · demo Task A",
+    "text": "Halo, saya Anton Kristiono. Ini demo Task A untuk MyRehat. Semua dua belas bug front-end dan tiga bug PHP sudah diperbaiki di situs task ini. Saya tunjukkan alurnya dari atas ke bawah."
+  },
+  {
+    "id": "search",
+    "caption": "A1 · Pencarian listing",
+    "text": "Pertama, pencarian listing. Sebelumnya fitur ini mati total. JavaScript-nya mencari elemen dengan id yang tidak ada, sehingga error pertama menghentikan seluruh handler di file itu, termasuk tombol booking. Sekarang mengetik nama trail langsung menyaring kartu."
+  },
+  {
+    "id": "category",
+    "caption": "A2 · Kategori digabung dengan pencarian",
+    "text": "Dropdown kategori juga sudah jalan, dan digabung dengan pencarian dalam satu fungsi filter. Saya pilih Forest, lalu tambahkan kata mount. Hasilnya nol, dan pesan No trails found muncul. Ini perilaku yang benar."
+  },
+  {
+    "id": "header",
+    "caption": "A10 · Pencarian di header",
+    "text": "Pencarian di header memakai filter yang sama. Jadi dua kotak pencarian ini tidak mungkin menampilkan daftar yang berbeda."
+  },
+  {
+    "id": "fields",
+    "caption": "A6 + A9 · Digital Nomad & Host Terms",
+    "text": "Di form booking sekarang ada pilihan Digital Nomad yang wajib diisi, dan checkbox I agree to the Host Terms yang juga wajib."
+  },
+  {
+    "id": "pricing",
+    "caption": "A11 · Daily / Monthly dengan total otomatis",
+    "text": "Untuk harga, Daily flat tiga ratus lima puluh ringgit. Monthly dihitung tiga ratus lima puluh kali tiga puluh hari kali nol koma delapan, jadi delapan ribu empat ratus. Total berubah langsung saat radio diganti."
+  },
+  {
+    "id": "confirm",
+    "caption": "A12 · Konfirmasi otomatis setelah booking",
+    "text": "Setelah submit, halaman redirect dan menampilkan pesan konfirmasi otomatis berisi nama, tanggal, plan, dan total. Ini bukan alert JavaScript. Datanya diverifikasi nonce, disanitasi, disimpan di server, lalu ditampilkan kembali lewat token sekali pakai."
+  },
+  {
+    "id": "mobile",
+    "caption": "A7 · Mobile 390px",
+    "text": "Terakhir, lebar tiga ratus sembilan puluh piksel. Sebelumnya ada section yang hilang karena display none di media query, dan halaman bisa digeser ke kanan karena kartu dipaksa selebar tiga ratus dua puluh piksel. Sekarang layout grid, dan tidak ada scroll horizontal."
+  },
+  {
+    "id": "outro",
+    "caption": "Dua perbaikan tersulit",
+    "text": "Dua perbaikan tersulit. Pertama, alur booking yang aman sekaligus memberi konfirmasi otomatis. Kedua, menyatukan pencarian listing, kategori, dan header ke satu sumber state. Terima kasih."
+  }
+]

@@ -1,5 +1,9 @@
-# Playwright raw recordings
-demo/raw/
+# Playwright raw recordings and build intermediates
+demo/build/raw/
+demo/build/audio/all.wav
+demo/build/narration.wav
+demo/build/video.mp4
+demo/build/*.filter
 
 # OS noise
 .DS_Store

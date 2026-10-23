@@ -1,0 +1,51 @@
+{
+  "introCard": 3,
+  "outroCard": 4.5,
+  "marks": [
+    {
+      "i": 0,
+      "t": 2.55,
+      "caption": "Tropic Hiking Trails — demo perbaikan Task A"
+    },
+    {
+      "i": 1,
+      "t": 17.77,
+      "caption": "A1 · Pencarian listing"
+    },
+    {
+      "i": 2,
+      "t": 36.2,
+      "caption": "A2 · Kategori digabung dengan pencarian"
+    },
+    {
+      "i": 3,
+      "t": 52.75,
+      "caption": "A10 · Pencarian di header"
+    },
+    {
+      "i": 4,
+      "t": 61.22,
+      "caption": "A6 + A9 · Digital Nomad & Host Terms"
+    },
+    {
+      "i": 5,
+      "t": 69.21,
+      "caption": "A11 · Daily / Monthly dengan total otomatis"
+    },
+    {
+      "i": 6,
+      "t": 83.84,
+      "caption": "A12 · Konfirmasi otomatis setelah booking"
+    },
+    {
+      "i": 7,
+      "t": 103.59,
+      "caption": "A7 · Mobile 390px"
+    },
+    {
+      "i": 8,
+      "t": 121.08,
+      "caption": "Dua perbaikan tersulit"
+    }
+  ]
+}
