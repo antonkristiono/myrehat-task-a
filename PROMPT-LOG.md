@@ -17,8 +17,8 @@ Halo Anton Kristiono, dari MyRehat — lamaran Junior SE kamu lolos seleksi awal
 
 TASK A — WordPress (di server kami, ±60-90 mnt)
 1. Situs kamu: http://task12.34-21-153-205.nip.io
-2. Login WP (/wp-login.php): user candidate_task12 pass Fa9IAzOTYMgIjIPo
-3. SSH (edit file, wp-cli, git): ssh candidate_task12@34.21.153.205 pass JeHb4uunBZi3WhRp
+2. Login WP (/wp-login.php): user candidate_task12 pass <redacted>
+3. SSH (edit file, wp-cli, git): ssh candidate_task12@34.21.153.205 pass <redacted>
    — langsung masuk ke folder situs kamu
 4. Perbaiki 12 bug ini: A1..A12 (lihat brief)
 5. PHP (file functions.php theme): B1 translation tanpa text-domain → perbaiki;
