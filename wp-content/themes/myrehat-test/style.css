@@ -1,0 +1,421 @@
+/*
+Theme Name: MyRehat Test
+Theme URI: https://myrehat.com/
+Description: Child theme of Hello Elementor for Junior SE practical test.
+Author: MyRehat
+Template: hello-elementor
+Version: 1.1.0
+Text Domain: myrehat-test
+*/
+
+/* -------------------------------------------------------------------------
+ * Base
+ * ---------------------------------------------------------------------- */
+.trails-page {
+	--myrehat-green: #0c6b4f;
+	--myrehat-green-dark: #09503b;
+	overflow-x: clip; /* safety net only — the layout itself no longer overflows */
+	padding-bottom: 12px;
+}
+
+/* -------------------------------------------------------------------------
+ * Site header (Hello Elementor) — compact bar above the hero
+ * ---------------------------------------------------------------------- */
+.site-header.dynamic-header {
+	border-bottom: 1px solid #e6ece9;
+	background: #fff;
+	padding: 10px 20px;
+}
+
+.site-header .site-title a {
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.3;
+	color: var(--myrehat-green);
+	text-decoration: none;
+}
+
+.site-header .site-description {
+	font-size: 13px;
+	color: #667;
+	margin: 0;
+}
+
+/* Our own footer replaces the Hello Elementor default on this template. */
+.page-template-page-trails-php #site-footer {
+	display: none;
+}
+
+/* -------------------------------------------------------------------------
+ * Hero (A5) — also rendered by the Elementor section template
+ * ---------------------------------------------------------------------- */
+.site-header-trails {
+	background: linear-gradient(135deg, #0c6b4f 0%, #0a5a43 100%);
+	color: #fff;
+	padding: 48px 20px;
+	text-align: center;
+}
+
+.site-header-trails h1 {
+	font-size: 32px;
+	line-height: 1.2;
+	color: #fff;
+	margin: 0 0 8px;
+}
+
+.site-header-trails p {
+	margin: 0 0 18px;
+	color: #d9efe6;
+}
+
+.site-header-trails #main-search {
+	margin-top: 6px;
+	padding: 12px 14px;
+	font-size: 15px;
+	width: min(420px, 100%);
+	border: 0;
+	border-radius: 6px;
+}
+
+/* Elementor hero wrapper: keep it full-bleed and inside the viewport */
+.trails-page .elementor-section.elementor-section-boxed > .elementor-container {
+	max-width: 1000px;
+}
+
+/* -------------------------------------------------------------------------
+ * Promo (A7 — was display:none under 600px)
+ * ---------------------------------------------------------------------- */
+.trails-promo {
+	background: #fff3cd;
+	padding: 12px 20px;
+	text-align: center;
+	color: #5c4708;
+}
+
+/* -------------------------------------------------------------------------
+ * Layout
+ * ---------------------------------------------------------------------- */
+.trails-main {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.trails-search-row {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 16px;
+}
+
+.trails-search-row input,
+.trails-search-row select {
+	padding: 10px;
+	font-size: 15px;
+	flex: 1 1 auto;
+	min-width: 0;
+	border: 1px solid #cdd6d2;
+	border-radius: 6px;
+	background: #fff;
+}
+
+/* A7 — grid instead of fixed 320px flex cards (that caused horizontal scroll) */
+.trails-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+	gap: 14px;
+}
+
+.trail-card {
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 14px;
+	min-width: 0;
+	background: #fff;
+}
+
+.trail-card h3 {
+	font-size: 17px;
+	margin: 0 0 6px;
+}
+
+.trail-card p {
+	margin: 0 0 10px;
+	color: #555;
+}
+
+.trail-card .price {
+	font-weight: bold;
+	color: var(--myrehat-green);
+}
+
+#trails-no-results {
+	color: #a00;
+	margin: 12px 0;
+	font-weight: 600;
+}
+
+/* -------------------------------------------------------------------------
+ * Booking
+ * ---------------------------------------------------------------------- */
+.trails-booking {
+	margin-top: 36px;
+	border-top: 2px solid #eee;
+	padding-top: 18px;
+}
+
+.trails-booking h2 {
+	font-size: 24px;
+	margin-bottom: 14px;
+}
+
+.trails-booking-form {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	max-width: 460px;
+}
+
+.trails-booking-form > label {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	font-weight: 600;
+}
+
+.trails-booking-form input[type="text"],
+.trails-booking-form input[type="email"],
+.trails-booking-form input[type="date"] {
+	padding: 10px;
+	font-size: 15px;
+	border: 1px solid #cdd6d2;
+	border-radius: 6px;
+	width: 100%;
+}
+
+.trails-booking-form fieldset {
+	border: 1px solid #e2e8e5;
+	border-radius: 8px;
+	padding: 10px 12px;
+	margin: 0;
+}
+
+.trails-booking-form legend {
+	font-weight: 700;
+	padding: 0 4px;
+	font-size: 14px;
+}
+
+.trails-booking-form fieldset label {
+	display: block;
+	font-weight: 400;
+	margin: 4px 0;
+	cursor: pointer;
+}
+
+.booking-terms {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	font-weight: 400;
+}
+
+.trails-booking-form > label.booking-terms {
+	flex-direction: row;
+	align-items: center;
+	gap: 8px;
+	font-weight: 500;
+}
+
+.booking-terms input {
+	margin-top: 3px;
+}
+
+.trails-booking-form button {
+	padding: 12px;
+	background: var(--myrehat-green);
+	color: #fff;
+	border: 0;
+	border-radius: 6px;
+	font-size: 15px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.trails-booking-form button:hover:not(:disabled) {
+	background: var(--myrehat-green-dark);
+}
+
+.trails-booking-form button:disabled {
+	opacity: .7;
+	cursor: progress;
+}
+
+#trails-total {
+	font-weight: 700;
+	font-size: 18px;
+	color: var(--myrehat-green);
+	margin: 0;
+}
+
+/* A12 */
+.trails-confirmation {
+	margin-top: 16px;
+	border: 1px solid var(--myrehat-green);
+	border-radius: 8px;
+	padding: 14px 16px;
+	background: #eef7f2;
+	max-width: 560px;
+}
+
+.trails-confirmation h3 {
+	margin: 0 0 8px;
+	color: var(--myrehat-green);
+}
+
+.trails-confirmation-error {
+	background: #fdecec;
+	border-color: #a00;
+	color: #7a0000;
+}
+
+/* -------------------------------------------------------------------------
+ * A3 — sticky WhatsApp / LINE
+ * ---------------------------------------------------------------------- */
+.myrehat-quick-contact {
+	position: fixed;
+	top: 12px;
+	right: 12px;
+	z-index: 9999;
+	display: flex;
+	gap: 8px;
+}
+
+.quick-contact-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 9px 14px;
+	border-radius: 999px;
+	color: #fff;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1;
+	text-decoration: none;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, .22);
+}
+
+.quick-contact-btn:hover,
+.quick-contact-btn:focus {
+	color: #fff;
+	transform: translateY(-1px);
+}
+
+.quick-contact-wa {
+	background: #25d366;
+}
+
+.quick-contact-line {
+	background: #06c755;
+}
+
+/* -------------------------------------------------------------------------
+ * Footer (A4 + A8)
+ * ---------------------------------------------------------------------- */
+.trails-footer {
+	background: #222;
+	color: #ccc;
+	padding: 24px 20px;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.trails-footer-nav,
+.trails-footer-social {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	justify-content: center;
+	margin: 0 0 12px;
+}
+
+.trails-footer-nav a {
+	color: #ccc;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.trails-footer-nav a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.trails-footer-social a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	background: #333;
+	color: #fff;
+}
+
+.trails-footer-social a:hover {
+	background: var(--myrehat-green);
+	color: #fff;
+}
+
+.trails-copyright {
+	margin: 6px 0 0;
+	font-size: 13px;
+	color: #999;
+}
+
+/* -------------------------------------------------------------------------
+ * Responsive — 390px must not scroll sideways (A7)
+ * ---------------------------------------------------------------------- */
+@media (max-width: 600px) {
+	.myrehat-quick-contact {
+		top: auto;
+		bottom: 14px;
+		right: 12px;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+
+	.trails-page {
+		padding-bottom: 96px; /* keep the floating buttons off the footer text */
+	}
+
+	.site-header.dynamic-header {
+		padding: 10px 16px;
+	}
+
+	.site-header .site-title a {
+		font-size: 17px;
+	}
+
+	.site-header .site-description {
+		font-size: 12px;
+	}
+
+	.trails-search-row {
+		flex-direction: column;
+	}
+
+	.site-header-trails {
+		padding: 32px 16px;
+	}
+
+	.site-header-trails h1 {
+		font-size: 26px;
+	}
+
+	.trails-main {
+		padding: 16px;
+	}
+
+	.trails-footer-nav {
+		gap: 10px 16px;
+	}
+}

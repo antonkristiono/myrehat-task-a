@@ -1,0 +1,6 @@
+# Playwright raw recordings
+demo/raw/
+
+# OS noise
+.DS_Store
+Thumbs.db

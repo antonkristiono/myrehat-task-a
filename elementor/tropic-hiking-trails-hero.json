@@ -1,0 +1,70 @@
+{
+  "content": [
+    {
+      "id": "7f3a1c2",
+      "elType": "section",
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#0C6B4F",
+        "background_overlay_background": "gradient",
+        "background_overlay_color": "#0C6B4F",
+        "background_overlay_color_b": "#083F31",
+        "background_overlay_gradient_angle": { "unit": "deg", "size": 135 },
+        "padding": { "unit": "px", "top": "56", "right": "20", "bottom": "56", "left": "20", "isLinked": false },
+        "padding_mobile": { "unit": "px", "top": "36", "right": "16", "bottom": "36", "left": "16", "isLinked": false },
+        "structure": "10"
+      },
+      "elements": [
+        {
+          "id": "2b8d4e6",
+          "elType": "column",
+          "settings": { "_column_size": 100, "_inline_size": null },
+          "elements": [
+            {
+              "id": "9c1f7a3",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Tropic Hiking Trails",
+                "header_size": "h1",
+                "align": "center",
+                "title_color": "#FFFFFF",
+                "typography_typography": "custom",
+                "typography_font_size": { "unit": "px", "size": 42, "sizes": [] },
+                "typography_font_size_mobile": { "unit": "px", "size": 28, "sizes": [] },
+                "typography_font_weight": "700",
+                "typography_line_height": { "unit": "em", "size": 1.2, "sizes": [] }
+              },
+              "elements": []
+            },
+            {
+              "id": "4d6b2f8",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p style=\"text-align:center;margin:0 0 22px;color:#D9EFE6;font-size:17px;\">Find your next trail with MyRehat</p>",
+                "text_color": "#D9EFE6"
+              },
+              "elements": []
+            },
+            {
+              "id": "6a9e3b1",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style=\"text-align:center;\"><label class=\"screen-reader-text\" for=\"main-search\">Search trails</label><input id=\"main-search\" type=\"search\" placeholder=\"Search trails...\" aria-label=\"Search trails\" autocomplete=\"off\" style=\"width:100%;max-width:420px;padding:12px 14px;font-size:15px;border:0;border-radius:6px;box-sizing:border-box;\" /></div>"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    }
+  ],
+  "page_settings": [],
+  "version": "0.4",
+  "title": "Tropic Hiking Trails — Hero",
+  "type": "section"
+}
