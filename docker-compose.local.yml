@@ -1,0 +1,95 @@
+# Local development stack for the MyRehat Task A child theme.
+#
+# This file is intentionally separate from any deployment compose file: it
+# publishes ports and mounts the theme straight from the repository so edits
+# show up immediately.
+#
+#   docker compose -f docker-compose.local.yml up -d
+#   open http://localhost:8080
+#
+# WordPress core lives in the `wp_data` volume; the theme is bind-mounted
+# read-only so the repo stays the single source of truth.
+
+name: myrehat-task-a-local
+
+services:
+  db:
+    image: mariadb:11
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: wordpress
+      MARIADB_ROOT_PASSWORD: rootpass
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "healthcheck.sh",
+          "--connect",
+          "--innodb_initialized",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  wordpress:
+    image: wordpress:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DEBUG: "1"
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'WP_DEBUG_LOG', true );
+        define( 'WP_DEBUG_DISPLAY', false );
+        define( 'SCRIPT_DEBUG', true );
+        define( 'DISALLOW_FILE_EDIT', false );
+    volumes:
+      - wp_data:/var/www/html
+      - ./wp-content/themes/myrehat-test:/var/www/html/wp-content/themes/myrehat-test:ro
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "php",
+          "-r",
+          "exit(@fsockopen('127.0.0.1', 80) ? 0 : 1);",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  # One-off helper: docker compose -f docker-compose.local.yml run --rm wpcli <args>
+  wpcli:
+    image: wordpress:cli
+    profiles: ["cli"]
+    depends_on:
+      db:
+        condition: service_healthy
+      wordpress:
+        condition: service_healthy
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    volumes:
+      - wp_data:/var/www/html
+      - ./wp-content/themes/myrehat-test:/var/www/html/wp-content/themes/myrehat-test:ro
+    user: "33:33"
+    entrypoint: ["wp"]
+
+volumes:
+  db_data:
+  wp_data:
